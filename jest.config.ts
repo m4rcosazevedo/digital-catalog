@@ -13,9 +13,9 @@ export default {
     '!<rootDir>/src/**/index.{ts,tsx}'
   ],
   moduleNameMapper: {
-    '\\.(gif|ttf|eot|svg|png)$': '<rootDir>/test/__ mocks __/fileMock.ts',
+    '\\.(gif|ttf|eot|svg|png)$': '<rootDir>/config/jest-setup-mock.ts',
     "\\.(css|scss)": "identity-obj-proxy",
     '^@/(.*)$': '<rootDir>/src/$1',
   },
-  setupFilesAfterEnv: ['<rootDir>/jest-setup.ts']
+  setupFilesAfterEnv: ['<rootDir>/src/config/jest-setup.ts']
 }
