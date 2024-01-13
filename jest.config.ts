@@ -9,6 +9,7 @@ export default {
   collectCoverageFrom: [
     '<rootDir>/src/**/*.{ts,tsx}',
     '!**/*.d.ts',
+    '!<rootDir>/src/main.tsx',
     '!<rootDir>/src/**/index.{ts,tsx}'
   ],
   moduleNameMapper: {
