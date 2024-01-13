@@ -14,10 +14,13 @@
     "noEmit": true,
     "jsx": "react-jsx",
 
+    "esModuleInterop": true,
     "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"]
     },
+
+    "types": ["node", "jest", "@testing-library/jest-dom"],
 
     /* Linting */
     "strict": true,
@@ -25,6 +28,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  "include": ["src", "./jest-setup.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
