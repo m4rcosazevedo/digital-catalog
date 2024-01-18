@@ -46,4 +46,13 @@ describe('LocalStorageAdapter', () => {
     expect(obj).toEqual(value)
     expect(getItemSpy).toHaveBeenCalledWith(key)
   })
+
+  test('Should call localStorage.getItem without value', async () => {
+    const sut = makeSut()
+    const key = 'any_key'
+
+    const obj = sut.get(key)
+
+    expect(obj).toBeNull()
+  })
 })

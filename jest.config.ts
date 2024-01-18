@@ -10,7 +10,8 @@ export default {
     '<rootDir>/src/**/*.{ts,tsx}',
     '!**/*.d.ts',
     '!<rootDir>/src/main.tsx',
-    '!<rootDir>/src/**/index.{ts,tsx}'
+    '!<rootDir>/src/**/index.{ts,tsx}',
+    '!<rootDir>/src/main/config/*.{ts,tsx}'
   ],
   moduleNameMapper: {
     '\\.(gif|ttf|eot|svg|png)$': '<rootDir>/main/config/jest-setup-mock.ts',
