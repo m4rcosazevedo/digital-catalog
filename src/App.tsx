@@ -1,18 +1,9 @@
-import { Button } from './components/ui/button/button'
+import { QueryClient, QueryClientProvider } from 'react-query'
+
+const queryClient = new QueryClient()
 
 function App() {
-  return (
-    <div>
-      <h1 className="text-3xl">Hello world!</h1>
-      <Button>Click me</Button>
-
-      <Button>Button</Button>
-
-      <Button asChild>
-        <a href="/login">Login</a>
-      </Button>
-    </div>
-  )
+  return <QueryClientProvider client={queryClient} />
 }
 
 export default App
