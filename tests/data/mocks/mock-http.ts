@@ -1,4 +1,4 @@
-import { HttpClient, HttpRequest, HttpResponse, HttpStatusCode } from '@/data/protocols/http'
+import { HttpClient, HttpRequest, HttpResponse } from '@/data/protocols/http'
 
 export const mockHttpRequest = (): HttpRequest => ({
   url: 'any_url',
@@ -11,13 +11,13 @@ export const mockHttpRequest = (): HttpRequest => ({
   }
 })
 
-export class HttpClientSpy<R = unknown> implements HttpClient<R> {
+export class HttpClientSpy<R> implements HttpClient<R> {
   url?: string
   method?: string
   body?: unknown
   headers?: unknown
   response: HttpResponse<R> = {
-    statusCode: HttpStatusCode.ok
+    statusCode: 200
   }
 
   async request(data: HttpRequest): Promise<HttpResponse<R>> {
@@ -25,6 +25,7 @@ export class HttpClientSpy<R = unknown> implements HttpClient<R> {
     this.method = data.method
     this.body = data.body
     this.headers = data.headers
+
     return this.response
   }
 }

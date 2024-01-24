@@ -1,19 +1,19 @@
-export type HttpResponse<T = unknown> = {
+export type HttpMethod = 'post' | 'get' | 'put' | 'delete'
+
+export type HttpRequest = {
+  url: string
+  method: HttpMethod
+  body?: unknown
+  headers?: Partial<unknown>
+}
+
+export type HttpResponse<T = unknown | undefined> = {
   statusCode: number
   body?: T
 }
 
-export type HttpMethod = 'post' | 'get' | 'put' | 'delete'
-
-export type HttpRequest<T = unknown> = {
-  url: string
-  method: HttpMethod
-  body?: T
-  headers?: Partial<unknown>
-}
-
 export interface HttpClient<R = unknown> {
-  request: (data: HttpRequest<R>) => Promise<HttpResponse<R>>
+  request: (data: HttpRequest) => Promise<HttpResponse<R>>
 }
 
 export enum HttpStatusCode {
@@ -22,5 +22,6 @@ export enum HttpStatusCode {
   badRequest = 400,
   unauthorized = 401,
   notFound = 404,
+  UnprocessableEntity = 422,
   serverError = 500
 }
