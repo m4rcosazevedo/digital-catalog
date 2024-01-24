@@ -16,6 +16,9 @@
     "test:watch": "jest --watch --no-cache --onlyChanged"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.15.6",
     "@radix-ui/react-dialog": "^1.0.5",
     "@radix-ui/react-scroll-area": "^1.0.5",
     "@radix-ui/react-slot": "^1.0.2",
@@ -26,6 +29,7 @@
     "lucide-react": "^0.309.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-error-boundary": "^4.0.12",
     "react-query": "^3.39.3",
     "react-router-dom": "^6.21.2",
     "tailwind-merge": "^2.2.0",
