@@ -8,6 +8,9 @@ import { Suspense, useState } from 'react'
 import { ErrorBoundary } from 'react-error-boundary'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { makeLogin } from '../factories/pages'
+
+import LayoutAuthenticate from '@/presentation/layouts/layout-authenticate'
 
 const queryClient = new QueryClient()
 
@@ -59,7 +62,13 @@ export default function Router() {
             <ErrorBoundary fallback={<h1>Deu Ruim</h1>}>
               <Routes>
                 <Route index element={<h1>Olá Mundo</h1>} />
+                <Route path="/loja" element={<LayoutAuthenticate />}>
+                  <Route index element={<h1>Home</h1>} />
+                  <Route path="products" element={<h1>Product</h1>} />
+                  <Route path="contact" element={<h1>Contact</h1>} />
+                </Route>
                 <Route path="/a" element={<Test />} />
+                <Route path="/login" element={makeLogin()} />
               </Routes>
             </ErrorBoundary>
           </Suspense>
